@@ -264,7 +264,8 @@ Content that comes from a patient or an integration, such as a patient portal me
 ```python
 from canvas_sdk.utils.html import sanitize_html
 
-safe = sanitize_html(message.content)
+untrusted_html = '<p>See <b>results</b></p><script>alert("hi")</script>'
+safe_html = sanitize_html(untrusted_html)
 ```
 
 **Parameters**:
